@@ -1,3 +1,17 @@
+/*
+  Font stack: Use 'Proxima Nova' if available, otherwise use 'Montserrat', Arial, or the default sans-serif font.
+  Proxima Nova is a commercial font, so it may not appear unless installed on your computer.
+*/
+
+/* Set the background image for the whole website */
+body {
+  background-image: url('user-uploaded-image-1.png'); /* Use the uploaded photo as background */
+  background-size: cover; /* Make the image cover the whole background */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  min-height: 100vh; /* Make sure background covers full height */
+}
+
 /* Simple responsive navbar styles */
 .navbar {
   display: flex;
@@ -10,14 +24,14 @@
 .navbar-title {
   color: var(--light-gray); /* Use palette color */
   font-size: 18px;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
 }
 
 .navbar-link {
   color: var(--light-gray); /* Use palette color */
   text-decoration: none;
   font-size: 16px;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
   padding: 5px 10px;
   border-radius: 4px;
   transition: background 0.2s;
@@ -37,33 +51,49 @@
     margin-top: 8px;
   }
 }
+
 /* Color palette for the website:
-   Dark Green: #12130F
-   Medium Green: #5B9279
-   Light Green: #8FCB9B
-   Light Gray: #EAE6E5
-   Brown: #8F8073
+   Gold: #ffc907
+   Navy Blue: #003367
+   Light Blue: #77a8bb
+   Cream: #fff7e1
+   Black: #1a1a1a
+   Peach: #fed8c2
+   Brown: #c06c46
+   Gray: #cbccd1
 */
 
 /* Set CSS variables for the color palette */
 :root {
-  --dark-green: #12130F;
-  --medium-green: #5B9279;
-  --light-green: #8FCB9B;
-  --light-gray: #EAE6E5;
-  --brown: #8F8073;
+  --gold: #ffc907; /* Gold color */
+  --navy-blue: #003367; /* Navy Blue color */
+  --light-blue: #77a8bb; /* Light Blue color */
+  --cream: #fff7e1; /* Cream color */
+  --black: #1a1a1a; /* Black color */
+  --peach: #fed8c2; /* Peach color */
+  --brown: #c06c46; /* Brown color */
+  --gray: #cbccd1; /* Gray color */
 }
 
-/* Style for h1: Comic Sans, centered, font size 25px */
+/* Style for h1: Proxima Nova, centered, font size 60px */
 h1 {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
   text-align: center;
-  font-size: 25px;
-  color: var(--light-green); /* Set h1 text color to light green from palette */
+  font-size: 60px; /* Make the headline large */
+  color: var(--light-green); /* You can change this color if you want */
 }
 
-/* Style for p and list items: Comic Sans, font size 12px */
+/* Style for subheadline: Proxima Nova, centered, font size 20px */
+.subheadline {
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
+  text-align: center;
+  font-size: 20px; /* Make the subheadline medium size */
+  color: var(--cream); /* You can change this color if you want */
+  margin-top: 10px;
+}
+
+/* Style for p and list items: Proxima Nova, font size 12px */
 p, li {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
   font-size: 12px;
 }
