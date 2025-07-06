@@ -5,7 +5,7 @@
 
 /* Set the background image for the whole website */
 body {
-  background-color: var(--cream); /* Set the background color to cream */
+  background-color: var(--light-blue); /* Set the background color to peach */
   min-height: unset;
   background: none;
 }
@@ -295,17 +295,23 @@ h1 {
 }
 
 .give-water-btn {
-  background-color: var(--gold);
-  color: var(--black);
+  background-color: var(--navy-blue); /* Navy blue background */
+  color: var(--cream);
   border: none;
   border-radius: 6px;
   padding: 12px 28px;
   font-size: 18px;
-  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif; /* Unify font */
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: background 0.2s, color 0.2s;
+}
+
+.give-water-btn:hover,
+.give-water-btn.selected {
+  background-color: var(--cream); /* Cream on hover */
+  color: var(--black);
 }
 
 /* Navigation link styles */
@@ -464,4 +470,74 @@ h1 {
   .nia-story-caption {
     max-width: 100%;
   }
+}
+
+/* Donate Now section styles */
+.donate-section {
+  background: var(--gold);
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 40px auto 60px auto;
+  padding: 36px 24px;
+  text-align: center;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+}
+
+.donate-section h2 {
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
+  color: var(--black);
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.donate-section p {
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
+  color: var(--black);
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 700px) {
+  .donate-section {
+    max-width: 95%;
+    padding: 18px 6px;
+  }
+  .donate-section h2 {
+    font-size: 22px;
+  }
+  .donate-section p {
+    font-size: 14px;
+  }
+}
+
+/* Donate Now price buttons */
+.donate-prices {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.donate-price-btn {
+  background: var(--navy-blue);
+  color: var(--cream);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.donate-price-btn.selected,
+.donate-price-btn:active {
+  background: var(--cream);
+  color: var(--black);
+}
+
+.donate-price-btn:hover {
+  background: var(--light-blue);
+  color: var(--black);
 }

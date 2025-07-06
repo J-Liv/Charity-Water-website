@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>LiveLab 4 Demo</title>
+  <title>Charity: Water</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -17,10 +17,8 @@
       </button>
       <nav class="header-nav">
         <a href="#our_story" class="header-link">Our Story</a>
-        <a href="#shop" class="header-link">Shop Our Store</a>
-        <a href="#brand_partnerships" class="header-link">Brand Partnership</a>
       </nav>
-      <button class="give-water-btn">Give Water Now</button>
+      <button class="give-water-btn" id="header-donate-btn">Give Water Now</button>
     </header>
     <!-- Headline for the website -->
     <div class="left-third">
@@ -28,11 +26,6 @@
       <!-- Subheadline for the website -->
       <p class="subheadline">Make a lasting impact with Total Transparency with every dollar. Bring clean water to communities and see what changes you make</p>
     </div>
-  </div>
-  <!-- Animated scroll-down indicator -->
-  <div class="scroll-indicator">
-    <span class="scroll-arrow">&#8595;</span>
-    <span class="scroll-text">Scroll Down</span>
   </div>
   <!-- About Us section for scrolling, placed after main content -->
   <div style="background: #fff; width: 100%; margin-top: 60px; padding: 40px 0;">
@@ -58,6 +51,40 @@
       </div>
     </section>
   </div>
+  <!-- Donate Now section below Our Story -->
+  <section class="donate-section" id="donate">
+    <h2>Donate Now</h2>
+    <p>Your support brings clean water to those in need. Every donation makes a difference!</p>
+    <div class="donate-prices">
+      <button class="donate-price-btn" data-amount="5">$5</button>
+      <button class="donate-price-btn" data-amount="10">$10</button>
+      <button class="donate-price-btn" data-amount="20">$20</button>
+      <button class="donate-price-btn" data-amount="50">$50</button>
+    </div>
+    <button class="give-water-btn">Give Water Now</button>
+  </section>
+  <script>
+    // Highlight selected price button
+    const priceBtns = document.querySelectorAll('.donate-price-btn');
+    priceBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        priceBtns.forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+      });
+    });
+
+    // Scroll to donate section when header button is clicked
+    document.getElementById('header-donate-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('donate').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Scroll to Our Story section when header link is clicked
+    document.querySelector('.header-link[href="#our_story"]').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('our_story').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 
