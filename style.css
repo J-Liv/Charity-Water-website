@@ -5,6 +5,7 @@
 
 /* Set the background image for the whole website */
 body {
+  background-color: var(--cream); /* Set the background color to cream */
   min-height: unset;
   background: none;
 }
@@ -334,4 +335,133 @@ h1 {
 .header-link:hover {
   background: var(--gold);
   color: var(--black);
+}
+
+/* Our Story section styles */
+.our-story-section {
+  background-color: var(--light-blue); /* Light blue background */
+  border-radius: 16px; /* Rounded corners for a friendly look */
+  padding: 40px 30px; /* Add space inside the box */
+  margin: 40px auto; /* Space above and below, center horizontally */
+  max-width: 80%; /* Limit width for readability */
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08); /* Soft shadow for depth */
+}
+
+.our-story-section h2,
+.our-story-section p {
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif; /* Use the correct font */
+  color: var(--black); /* Use black for good contrast */
+}
+
+.our-story-section h2 {
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+
+.our-story-section p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .our-story-section {
+    padding: 20px 10px;
+    margin: 24px 4px;
+  }
+  .our-story-section h2 {
+    font-size: 22px;
+  }
+  .our-story-section p {
+    font-size: 14px;
+  }
+}
+
+/* Our Story section layout */
+.our-story-flex {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.our-story-text {
+  flex: 1 1 0;
+  min-width: 220px;
+}
+
+.nia-story-image-container {
+  position: relative;
+  flex: 1 1 0;
+  max-width: 320px;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nia-story-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  display: block;
+}
+
+.nia-story-overlay {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: var(--cream);
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  background: rgba(0,0,0,0.5);
+  padding: 8px 0;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  pointer-events: none;
+}
+
+.nia-story-image-caption-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0;
+  max-width: 340px;
+  min-width: 180px;
+}
+
+.nia-story-caption {
+  margin-top: 18px;
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
+  font-size: 17px;
+  color: var(--black);
+  text-align: center;
+  background: rgba(255,255,255,0.7);
+  border-radius: 8px;
+  padding: 14px 10px 10px 10px;
+  max-width: 320px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 900px) {
+  .our-story-flex {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+  }
+  .nia-story-image-container {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .nia-story-image-caption-group {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .nia-story-caption {
+    max-width: 100%;
+  }
 }
