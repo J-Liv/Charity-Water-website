@@ -5,9 +5,9 @@
 
 /* Set the background image for the whole website */
 body {
-  background-image: url('user-uploaded-image-1.png'); /* Use the uploaded photo as background */
+  background-image: url('https://cdn2.dropmarkusercontent.com/52043/5938a755f792e37ab8cbc94c5d3230537eba586f1cbea8f54599567b83672682/4996_Ethiopia_2019_CG-.jpg?Expires=1751832834&Signature=K9DyKbXmbRI57x45VUR79xCqyW0Gm3G9VRAt0ZNjodBiHsYjlSQG1FSVi690tEzkw3SJL3QKRve50KJtp7G5OrYCwlWv7XPnA4H46IShqE1NctxACBVlAjWc4BTBASmrVcxlPypiFc-BNMRQ5ygh~MtULeabHJ7f0qX83Nmdq-4WB6icIJaXcNyeGiwXrgKP1zvaLJdGXR~-n9ZBz6RuZPr8KrRAsGhP8tmyWFEsNKr4xCRzyZ6v2P~wUC56gaYPbXPW-6mCW6h~afsAGRG939XKBLoviet1s3BxNnTXn29l0c8sH92KWTe7uzKHkpblJnCT8B7EzLzCirOjviFKnw__&Key-Pair-Id=APKAITQYWVEN757ZA4KQ'); /* Use the provided image link as background */
   background-size: cover; /* Make the image cover the whole background */
-  background-position: center; /* Center the image */
+  background-position: top center; /* Show more of the top of the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   min-height: 100vh; /* Make sure background covers full height */
 }
@@ -75,25 +75,253 @@ body {
   --gray: #cbccd1; /* Gray color */
 }
 
-/* Style for h1: Proxima Nova, centered, font size 60px */
+/* Container for left-side text (now left third) */
+.left-third {
+  width: 33.33%; /* Only take up one third of the screen */
+  min-width: 200px; /* Make sure it doesn't get too small on small screens */
+  padding: 40px 0 0 30px; /* Add space from the top and left */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+@media (max-width: 1100px) {
+  .left-third {
+    width: 50%;
+    padding: 30px 0 0 16px;
+  }
+}
+
+@media (max-width: 800px) {
+  .left-third {
+    width: 100%; /* On small screens, use full width */
+    padding: 20px 10px 0 10px;
+  }
+}
+
+/* Style for h1: Proxima Nova, left aligned, font size 50px, cream color */
 h1 {
   font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
-  text-align: center;
-  font-size: 60px; /* Make the headline large */
-  color: var(--light-green); /* You can change this color if you want */
+  text-align: left; /* Align headline to the left */
+  font-size: 55px; /* Make the headline large */
+  color: var(--cream); /* Headline is now cream */
+  margin-left: 30px; /* Add some space from the left edge */
+  background: rgba(0,0,0,0.5); /* Add semi-transparent black shading */
+  padding: 16px 20px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
-/* Style for subheadline: Proxima Nova, centered, font size 20px */
+@media (max-width: 1100px) {
+  h1 {
+    font-size: 40px;
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 28px;
+    margin-left: 10px;
+    padding: 8px 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 18px;
+    margin-left: 4px;
+    padding: 4px 4px;
+  }
+}
+
+/* Style for subheadline: Proxima Nova, left aligned, font size 15px, cream color */
 .subheadline {
   font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
-  text-align: center;
-  font-size: 20px; /* Make the subheadline medium size */
-  color: var(--cream); /* You can change this color if you want */
+  text-align: left; /* Align subheadline to the left */
+  font-size: 15px; /* Make the subheadline medium size */
+  color: var(--cream); /* Set subheadline color to black */
   margin-top: 10px;
+  margin-left: 30px; /* Add some space from the left edge */
+  background: rgba(0,0,0,0.5); /* Add semi-transparent black shading */
+  padding: 16px 20px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
-/* Style for p and list items: Proxima Nova, font size 12px */
-p, li {
+@media (max-width: 1100px) {
+  .subheadline {
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  .subheadline {
+    font-size: 11px;
+    margin-left: 10px;
+    padding: 8px 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .subheadline {
+    font-size: 9px;
+    margin-left: 4px;
+    padding: 4px 4px;
+  }
+}
+
+/* Header styles with logo on the left and button on the right */
+.site-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Vertically center all header content */
+  justify-content: space-between; /* Logo left, button right */
+  padding: 0 30px; /* Remove top padding for true vertical centering */
+  min-height: 100px; /* Make header a bit taller for vertical centering */
+  box-sizing: border-box;
+  background: #000; /* Semi-transparent black shading */
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  gap: 20px; /* Space between logo and button */
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.25); /* Add shading behind header */
+}
+
+@media (max-width: 1100px) {
+  .header-logo {
+    width: 44px;
+    height: 44px;
+  }
+  .logo-btn {
+    width: 56px;
+    height: 56px;
+  }
+  .give-water-btn {
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+  .header-link {
+    font-size: 15px;
+    padding: 5px 8px;
+  }
+}
+
+@media (max-width: 800px) {
+  .site-header {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: unset;
+    padding: 10px 10px 0 10px;
+    gap: 10px;
+  }
+  .header-nav {
+    justify-content: center;
+    gap: 12px;
+    margin: 10px 0;
+  }
+  .logo-btn {
+    margin: 0 auto 10px auto;
+  }
+  .give-water-btn {
+    margin: 0 auto 10px auto;
+    width: 100%;
+  }
+  .left-third {
+    width: 100%;
+    padding: 16px 6px 0 6px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-logo {
+    width: 32px;
+    height: 32px;
+  }
+  .logo-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+  }
+  .give-water-btn {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+  .header-link {
+    font-size: 12px;
+    padding: 3px 4px;
+  }
+}
+
+.logo-btn {
+  width: 70px;
+  height: 70px;
+  background: #000; /* Black background */
+  border: 2px solid var(--cream); /* Cream border restored */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-right: 12px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif; /* Unify font */
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.logo-btn:hover {
+  background: #000;
+  border-color: var(--gold); /* Gold border on hover */
+}
+
+.header-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+}
+
+.give-water-btn {
+  background-color: var(--gold);
+  color: var(--black);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 18px;
+  font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif; /* Unify font */
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Navigation link styles */
+.header-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  height: 100%;
+}
+
+.header-link {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 18px;
   font-family: 'Proxima Nova', 'Montserrat', Arial, sans-serif;
-  font-size: 12px;
+  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header-link:hover {
+  background: var(--gold);
+  color: var(--black);
 }
